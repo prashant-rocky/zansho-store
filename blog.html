@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>Kinokuniya | blog</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/logo.png" alt="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ms-3">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="index.html">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="myBtn" id="cart"><i class="bi bi-cart"></i></button>
+            </div>
+
+        </nav>
+    </header>
+    <div class="cartBox" id="cartBox">
+        <div class="closeBtn pt-2 ps-2" id="closeCart">
+            <button type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+        <h3 class="text-center py-3">Your Cart</h3>
+        <div id="cartItems" class="px-3">
+
+        </div>
+        <div class="text-center py-3">
+            <h4>Total: <span id="totalAmount">¥0.00</span></h4>
+            <button class="myBtn mt-2" id="Checkout">Checkout</button>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer text-white pt-5 text-start">
+        <div class="container">
+            <div class="row">
+                <!-- Logo + Description -->
+                <div class="col-md-4">
+                    <div class="footerLogo">
+                        <img src="assets/images/logo.png" alt="error">
+                        <p class="py-3">
+                            Kinokuniya is your trusted destination for books and magazines in Japan. From timeless classics
+                            to the latest releases, we bring stories, culture, and inspiration to every reader’s hands.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="py-3">contact details:</h3>
+                    <p>Location: 3-17-7 Shinjuku , Shinjuku-ku, Tokyo 160-0022</p>
+                    <p>Phone: +81333540131</p>
+                    <p>Email: ict_ebook@kinokuniya.co.jp</p>
+                </div>
+                <!-- Legal Information -->
+                <div class="col-md-4">
+                    <h3 class="py-3">Legal Information</h3>
+                    <p><a href="cookies.html" class="text-decoration-none">Cookies Policy</a></p>
+                    <p><a href="privacy.html" class="text-decoration-none">Privacy Policy</a></p>
+                    <p><a href="disclaimer.html" class="text-decoration-none">Disclaimer</a></p>
+                    <p><a href="terms&condition.html" class="text-decoration-none">Terms & Conditions</a></p>
+                    <div class="text-start p-2">
+                        <a href="#" id="open_preferences_center" class="text-decoration-none">Update cookies
+                            preferences</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Row -->
+            <div class="row w-100 text-center">
+                <div class="col-md-12">
+                    <div class="text-center py-3">
+                        <p class="mb-0">© 2025 Kinokuniya. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Checkout Form Modal -->
+    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="checkoutForm">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="checkoutModalLabel">Checkout Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Address</label>
+                            <textarea class="form-control" id="address" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Payment Method</label>
+                            <select class="form-select" id="payment" required>
+                                <option value="cod" selected>Cash on Delivery</option>
+                                <option value="online" disabled>Online Payment (coming soon)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Place Order</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script defer src="https://www.termsfeed.com/public/cookie-consent/4.2.0/cookie-consent.js"></script>
+    <!-- ✅ Bootstrap JS bundle (required for toggler & dropdowns) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/script.js"></script>
+</body>
+
+</html>
