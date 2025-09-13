@@ -354,8 +354,13 @@ function removeFromCart(index) {
 const checkout = document.getElementById("Checkout");
 if (checkout){
     checkout.addEventListener("click", () => {
-        const checkoutModal = new bootstrap.Modal(document.getElementById("checkoutModal"));
-        checkoutModal.show();
+        if (cartitems.length == 0) {
+            alert("please add product in cart")
+        }
+        else{
+            const checkoutModal = new bootstrap.Modal(document.getElementById("checkoutModal"));
+            checkoutModal.show();
+        }
     });
 }
 

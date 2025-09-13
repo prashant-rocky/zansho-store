@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>Kinokuniya | Top 5 magazine loved in japan</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar fixnav navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/logo.png" alt="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ms-3">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="index.html">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="myBtn" id="cart"><i class="bi bi-cart"></i></button>
+            </div>
+        </nav>
+    </header>
+    <div class="cartBox" id="cartBox">
+        <div class="closeBtn pt-2 ps-2" id="closeCart">
+            <button type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+        <h3 class="text-center py-3">Your Cart</h3>
+        <div id="cartItems" class="px-3">
+
+        </div>
+        <div class="text-center py-3">
+            <h4>Total: <span id="totalAmount">¥0.00</span></h4>
+            <button class="myBtn mt-2" id="Checkout">Checkout</button>
+        </div>
+    </div>
+    <section class="blog-detail py-5 mt-5" style="background-color: #fdfdf8;">
+        <div class="container">
+
+            <!-- Blog Header -->
+            <div class="text-center mb-5">
+                <h1 class="fw-bold">Top 5 Magazines Loved in Japan</h1>
+                <p class="text-muted">Published on: Feb 02, 2025</p>
+                <img src="assets/images/magazine.png" alt="Top Magazines in Japan"
+                    class="img-fluid rounded-4 shadow my-4" style="max-height: 400px; object-fit: cover; width: 100%;">
+                <p class="lead text-dark">
+                    From fashion to literature, explore the magazines that continue to inspire millions of readers
+                    across Japan every month.
+                </p>
+            </div>
+
+            <!-- Blog Content -->
+            <div class="blog-content mx-auto"
+                style="max-width: 850px; line-height: 1.8; font-size: 1.05rem; color: #333;">
+
+                <h3 class="fw-semibold mt-4">Magazines: More Than Reading Material</h3>
+                <p>
+                    In Japan, magazines are not just sources of news or entertainment—they are cultural icons. They
+                    shape fashion, literature, art, and even the digital lives of their readers. From glossy fashion
+                    spreads to serialized manga and celebrity interviews, each issue feels like a curated window into
+                    Japanese society.
+                </p>
+
+                <h3 class="fw-semibold mt-4">Our Top Picks</h3>
+                <p>
+                    Here are five standout magazines and photobooks that continue to capture hearts in Japan:
+                </p>
+
+                <!-- Product 1 -->
+                <div class="card mb-4 shadow-sm border-0">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="assets/images/hikari.jpg" class="img-fluid rounded-start"
+                                alt="Hikari Kuroki Photobook">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Tomorrow, I'll Love You More</h5>
+                                <p class="card-text"><em>Hikari Kuroki Photobook (Weekly Playboy)</em></p>
+                                <p class="card-text">A fresh, intimate collection featuring actress Hikari Kuroki. From
+                                    hot springs to beaches, this photobook reveals her natural charm and maturity.</p>
+                                <p class="fw-bold text-dark">Price: ¥1,100</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="card mb-4 shadow-sm border-0">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="assets/images/shonen magazine.jpg" class="img-fluid rounded-start"
+                                alt="Weekly Shonen Magazine">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Weekly Shonen Magazine 2025</h5>
+                                <p class="card-text"><em>Issue 40, Released Sept 3, 2025</em></p>
+                                <p class="card-text">Packed with new manga chapters, idol features, and VTuber
+                                    collaborations, Shonen Magazine continues to define youth entertainment.</p>
+                                <p class="fw-bold text-dark">Price: ¥400</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="card mb-4 shadow-sm border-0">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="assets/images/hinano.jpg" class="img-fluid rounded-start" alt="Hinano Himeno">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Hinano Himeno</h5>
+                                <p class="card-text"><em>Digital Exclusive Photobook Azure</em></p>
+                                <p class="card-text">Hinano’s charm shines through in this exclusive digital release.
+                                    From idol energy to serene beauty, every page is a delight.</p>
+                                <p class="fw-bold text-dark">Price: ¥990</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="card mb-4 shadow-sm border-0">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="assets/images/issue35.jpg" class="img-fluid rounded-start"
+                                alt="Big Comic Spirits">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Big Comic Spirits 2025</h5>
+                                <p class="card-text"><em>Issue 35, Digital Edition</em></p>
+                                <p class="card-text">One of Japan’s most popular seinen manga magazines, featuring
+                                    everything from idol gravure to cutting-edge serialized stories.</p>
+                                <p class="fw-bold text-dark">Price: ¥510</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="card mb-4 shadow-sm border-0">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="assets/images/akamaShiki.jpg" class="img-fluid rounded-start"
+                                alt="Akama Shiki Photobook">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Akama Shiki</h5>
+                                <p class="card-text"><em>Digital Photobook Vermilion</em></p>
+                                <p class="card-text">Bright, passionate, and unforgettable—Akama Shiki’s Vermilion
+                                    captures her dual charm of innocence and maturity in a stunning collection.</p>
+                                <p class="fw-bold text-dark">Price: ¥990</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="fw-semibold mt-5">Why These Magazines Matter</h3>
+                <p>
+                    From manga that inspires young dreamers to photobooks that celebrate beauty and artistry, magazines
+                    in Japan are more than publications—they are cultural milestones. They offer an escape, a source of
+                    creativity, and a way to stay connected with the pulse of society.
+                </p>
+
+                <!-- Conclusion -->
+                <div class="mt-5 p-4 rounded-3 shadow-sm" style="background: #f8f9fa;">
+                    <h4 class="fw-bold">Conclusion</h4>
+                    <p>
+                        The top five magazines listed here represent Japan’s diverse reading culture. Whether you’re a
+                        fan of manga, photography, or idol culture, each issue is a testament to Japan’s rich publishing
+                        heritage and its ongoing love affair with print.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-white pt-5 text-start">
+        <div class="container">
+            <div class="row">
+                <!-- Logo + Description -->
+                <div class="col-md-4">
+                    <div class="footerLogo">
+                        <img src="assets/images/logo.png" alt="error">
+                        <p class="py-3">
+                            Kinokuniya is your trusted destination for books and magazines in Japan. From timeless
+                            classics
+                            to the latest releases, we bring stories, culture, and inspiration to every reader’s hands.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="py-3">contact details:</h3>
+                    <p>Location: 3-17-7 Shinjuku , Shinjuku-ku, Tokyo 160-0022</p>
+                    <p>Phone: +81333540131</p>
+                    <p>Email: ict_ebook@kinokuniya.co.jp</p>
+                </div>
+                <!-- Legal Information -->
+                <div class="col-md-4">
+                    <h3 class="py-3">Legal Information</h3>
+                    <p><a href="cookies.html" class="text-decoration-none">Cookies Policy</a></p>
+                    <p><a href="privacy.html" class="text-decoration-none">Privacy Policy</a></p>
+                    <p><a href="disclaimer.html" class="text-decoration-none">Disclaimer</a></p>
+                    <p><a href="terms&condition.html" class="text-decoration-none">Terms & Conditions</a></p>
+                    <div class="text-start pt-2">
+                        <a href="#" id="open_preferences_center" class="text-decoration-none">Update cookies
+                            preferences</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Row -->
+            <div class="row w-100 text-center">
+                <div class="col-md-12">
+                    <div class="text-center py-3">
+                        <p class="mb-0">© 2025 Kinokuniya. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Checkout Form Modal -->
+    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="checkoutForm">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="checkoutModalLabel">Checkout Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Address</label>
+                            <textarea class="form-control" id="address" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Payment Method</label>
+                            <select class="form-select" id="payment" required>
+                                <option value="cod" selected>Cash on Delivery</option>
+                                <option value="online" disabled>Online Payment (coming soon)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Place Order</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script defer src="https://www.termsfeed.com/public/cookie-consent/4.2.0/cookie-consent.js"></script>
+    <!-- ✅ Bootstrap JS bundle (required for toggler & dropdowns) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/script.js"></script>
+</body>
+
+</html>
