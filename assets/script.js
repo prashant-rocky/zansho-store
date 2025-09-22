@@ -319,17 +319,18 @@ function addToCart(id) {
 
     renderCart();
 }
-
 function renderCart() {
     const cartItemsContainer = document.getElementById("cartItems");
     const totalAmount = document.getElementById("totalAmount");
 
     cartItemsContainer.innerHTML = "";
 
-    let total = 0;
+    let subtotal = 0;
 
     cartitems.forEach((item, index) => {
-        total += parseFloat(item.price.replace("¥", "").replace(",", ""));
+        const itemPrice = parseFloat(item.price.replace("¥", "").replace(",", ""));
+        subtotal += itemPrice;
+
         if (cartItemsContainer) {
             cartItemsContainer.innerHTML += `
                 <div class="cart-item d-flex justify-content-between align-items-center border-bottom py-2">
@@ -343,8 +344,17 @@ function renderCart() {
         }
     });
 
-    totalAmount.innerText = `¥${total.toFixed(2)}`;
+    const shippingFee = 500; // Example: ¥500 delivery
+    const total = subtotal + shippingFee;
+
+    // Update totals in the cart box
+    totalAmount.innerHTML = `
+        Subtotal: ¥${subtotal.toFixed(2)} <br>
+        Shipping: ¥${shippingFee.toFixed(2)} <br>
+        <strong>Total: ¥${total.toFixed(2)}</strong>
+    `;
 }
+
 function removeFromCart(index) {
     cartitems.splice(index, 1);
     renderCart();
@@ -384,7 +394,6 @@ if (checkout) {
     });
 }
 
-// Handle form submission
 document.getElementById("checkoutForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -399,38 +408,84 @@ document.getElementById("checkoutForm").addEventListener("submit", function (e) 
         return;
     }
 
-    if (payment === "cod") {
-        alert(`✅ Thank you, ${name}!
-Your order will be delivered to: ${address}
-📧 Email: ${email}
-📞 Phone: ${phone}
-💰 Payment: Cash on Delivery.`);
- cartCount.innerText = '0';
-    }
+    // Calculate totals
+    let subtotal = 0;
+    cartitems.forEach(item => {
+        subtotal += parseFloat(item.price.replace("¥", "").replace(",", ""));
+    });
+    const shippingFee = 500;
+    const total = subtotal + shippingFee;
 
-    // Clear cart after order
+    // Save order details to localStorage
+    const orderDetails = { name, email, address, phone, payment, cartItems: cartitems, subtotal, shippingFee, total };
+    localStorage.setItem("lastOrder", JSON.stringify(orderDetails));
+
+    // Clear cart
     cartitems = [];
     localStorage.setItem("cart", JSON.stringify(cartitems));
     renderCart();
+    document.getElementById("cartCount").innerText = '0';
 
     // Reset form
     e.target.reset();
 
-    // Hide the modal
+    // Hide checkout modal
     const modalEl = document.getElementById("checkoutModal");
     const modal = bootstrap.Modal.getInstance(modalEl);
     modal.hide();
-});
-const contactForm = document.getElementById('contactForm');
-const thankYouCard = document.getElementById('thankYouCard');
 
-contactForm.addEventListener('submit', function (e) {
-    e.preventDefault(); // prevent actual form submission
-    thankYouCard.classList.remove('d-none'); // show thank you card
+    // Show thank you card dynamically
+    const OrderthankYou = document.getElementById("OrderthankYou");
+    const order = JSON.parse(localStorage.getItem("lastOrder"));
+    cartBox.style.display = "none";
 
-    // Hide after 4 seconds
-    setTimeout(() => {
-        thankYouCard.classList.add('d-none');
-        contactForm.reset(); // reset form fields
-    }, 4000);
+    if (OrderthankYou && order) {
+        OrderthankYou.classList.remove("d-none");
+        OrderthankYou.innerHTML = `
+          <div class="card shadow-lg p-4 text-center" style="max-width:600px; margin:0 auto; border-radius:12px;">
+            <h3 class="text-success mb-3">✅ Thank You, ${order.name}!</h3>
+            <p>Your order has been placed successfully.</p>
+            <p><strong>📍 Address:</strong> ${order.address}</p>
+            <p><strong>📧 Email:</strong> ${order.email}</p>
+            <p><strong>📞 Phone:</strong> ${order.phone}</p>
+            <p><strong>💰 Payment:</strong> ${order.payment === "cod" ? "Cash on Delivery" : order.payment}</p>
+
+            <h5 class="mt-3">🛒 Order Summary</h5>
+            <ul class="list-group mb-3">
+              ${order.cartItems.map(item => `
+                <li class="list-group-item d-flex justify-content-between">
+                  ${item.name} <span>${item.price}</span>
+                </li>
+              `).join("")}
+            </ul>
+
+            <ul class="list-group mb-3">
+              <li class="list-group-item d-flex justify-content-between">Subtotal <span>¥${order.subtotal.toFixed(2)}</span></li>
+              <li class="list-group-item d-flex justify-content-between">Shipping <span>¥${order.shippingFee.toFixed(2)}</span></li>
+              <li class="list-group-item d-flex justify-content-between fw-bold">Total <span>¥${order.total.toFixed(2)}</span></li>
+            </ul>
+
+            <a href="index.html" class="btn btn-primary">Continue Shopping</a>
+          </div>
+        `;
+
+        // Clear last order after showing
+        localStorage.removeItem("lastOrder");
+    }
 });
+
+
+// const contactForm = document.getElementById('contactForm');
+// const thankYouCard = document.getElementById('thankYouCard');
+
+
+// contactForm.addEventListener('submit', function (e) {
+//     e.preventDefault(); // prevent actual form submission
+//     thankYouCard.classList.remove('d-none'); // show thank you card
+
+//     // Hide after 4 seconds
+//     setTimeout(() => {
+//         thankYouCard.classList.add('d-none');
+//         contactForm.reset(); // reset form fields
+//     }, 4000);
+// });
