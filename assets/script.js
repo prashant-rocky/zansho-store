@@ -400,4 +400,16 @@ Your order will be delivered to: ${address}
     const modal = bootstrap.Modal.getInstance(modalEl);
     modal.hide();
 });
-    
+ const contactForm = document.getElementById('contactForm');
+  const thankYouCard = document.getElementById('thankYouCard');
+
+  contactForm.addEventListener('submit', function(e){
+    e.preventDefault(); // prevent actual form submission
+    thankYouCard.classList.remove('d-none'); // show thank you card
+
+    // Hide after 4 seconds
+    setTimeout(() => {
+      thankYouCard.classList.add('d-none');
+      contactForm.reset(); // reset form fields
+    }, 4000);
+  });
