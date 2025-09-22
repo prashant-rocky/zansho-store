@@ -475,17 +475,19 @@ document.getElementById("checkoutForm").addEventListener("submit", function (e) 
 });
 
 
-// const contactForm = document.getElementById('contactForm');
-// const thankYouCard = document.getElementById('thankYouCard');
+const contactForm = document.getElementById('contactForm');
+const thankYouCard = document.getElementById('thankYouCard');
 
-
-// contactForm.addEventListener('submit', function (e) {
-//     e.preventDefault(); // prevent actual form submission
-//     thankYouCard.classList.remove('d-none'); // show thank you card
-
-//     // Hide after 4 seconds
-//     setTimeout(() => {
-//         thankYouCard.classList.add('d-none');
-//         contactForm.reset(); // reset form fields
-//     }, 4000);
-// });
+if (contactForm) {
+    
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault(); // prevent actual form submission
+        thankYouCard.classList.remove('d-none'); // show thank you card
+    
+        // Hide after 4 seconds
+        setTimeout(() => {
+            thankYouCard.classList.add('d-none');
+            contactForm.reset(); // reset form fields
+        }, 4000);
+    });
+}
