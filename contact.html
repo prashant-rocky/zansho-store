@@ -98,51 +98,54 @@
         </div>
     </section>
     <!-- Contact Form Section -->
-<section class="contact-form-section py-5" style="background:#F8F1E7;">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold" style="color:#4682B4;">Get in Touch</h2>
-      <p class="text-muted">Have questions or want to connect with us? Fill out the form below.</p>
-    </div>
-
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="card shadow-sm border-0 p-4">
-          <form id="contactForm">
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" required>
+    <section class="contact-form-section py-5" style="background:#F8F1E7;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold" style="color:#4682B4;">Get in Touch</h2>
+                <p class="text-muted">Have questions or want to connect with us? Fill out the form below.</p>
             </div>
 
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" required>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow-sm border-0 p-4">
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="tel" class="form-control" id="phone">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+
+                            <button type="submit" class="myBtn w-100">Send Message</button>
+                        </form>
+
+                        <!-- Thank You Card -->
+                        <div id="thankYouCard" class="card text-center p-4 mt-4 bg-success text-white d-none">
+                            <h5 class="mb-2">Thank You!</h5>
+                            <p class="mb-0">Your message has been sent successfully. We will contact you soon.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="mb-3">
-              <label for="phone" class="form-label">Phone</label>
-              <input type="tel" class="form-control" id="phone">
-            </div>
-
-            <div class="mb-3">
-              <label for="message" class="form-label">Message</label>
-              <textarea class="form-control" id="message" rows="5" required></textarea>
-            </div>
-
-            <button type="submit" class="myBtn w-100">Send Message</button>
-          </form>
-
-          <!-- Thank You Card -->
-          <div id="thankYouCard" class="card text-center p-4 mt-4 bg-success text-white d-none">
-            <h5 class="mb-2">Thank You!</h5>
-            <p class="mb-0">Your message has been sent successfully. We will contact you soon.</p>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5344.383632222232!2d139.6966992406506!3d35.650140758575276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b455c9d5a1d%3A0x6a61cfa02d1a1665!2sSarugakucho%2C%20Shibuya%2C%20Tokyo%20150-0033%2C%20Japan!5e1!3m2!1sen!2sin!4v1758525748092!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5344.383632222232!2d139.6966992406506!3d35.650140758575276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b455c9d5a1d%3A0x6a61cfa02d1a1665!2sSarugakucho%2C%20Shibuya%2C%20Tokyo%20150-0033%2C%20Japan!5e1!3m2!1sen!2sin!4v1758525748092!5m2!1sen!2sin"
+        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
 
     <div class="cartBox" id="cartBox">
         <div class="closeBtn pt-2 ps-2" id="closeCart">
@@ -159,7 +162,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer text-white pt-5 text-start">
+     <footer class="footer text-white pt-5 text-start">
         <div class="container">
             <div class="row">
                 <!-- Logo + Description -->
@@ -167,10 +170,13 @@
                     <div class="footerLogo">
                         <img src="assets/images/logo.png" alt="error">
                         <p class="py-3">
-                            Zenko Books is your trusted destination for books and magazines in Japan. From timeless
-                            classics
+                            Zenko Books is your trusted destination for books and magazines in Japan. From timeless classics
                             to the latest releases, we bring stories, culture, and inspiration to every reader’s hands.
                         </p>
+                        <div class="text-start pt-2">
+                        <a href="#" id="open_preferences_center" class="text-decoration-none">Update cookies
+                            preferences</a>
+                    </div>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -186,10 +192,7 @@
                     <p><a href="privacy.html" class="text-decoration-none">Privacy Policy</a></p>
                     <p><a href="disclaimer.html" class="text-decoration-none">Disclaimer</a></p>
                     <p><a href="terms&condition.html" class="text-decoration-none">Terms & Conditions</a></p>
-                    <div class="text-start p-2">
-                        <a href="#" id="open_preferences_center" class="text-decoration-none">Update cookies
-                            preferences</a>
-                    </div>
+                    <p><a href="shippingPolicy.html" class="text-decoration-none">refund&shipping Policy</a></p>
                 </div>
             </div>
 
