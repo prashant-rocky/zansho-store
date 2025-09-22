@@ -40,7 +40,13 @@
                         </li>
                     </ul>
                 </div>
-                <button class="myBtn" id="cart"><i class="bi bi-cart"></i></button>
+                <div id="cartIcon" class="position-relative" onclick="toggleCart()">
+                    <button class="myBtn" id="cart"><i class="bi bi-cart"></i></button>
+                    <span id="cartCount"
+                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        0
+                    </span>
+                </div>
             </div>
 
         </nav>
@@ -91,13 +97,14 @@
                     <div class="footerLogo">
                         <img src="assets/images/logo.png" alt="error">
                         <p class="py-3">
-                            Zenko Books is your trusted destination for books and magazines in Japan. From timeless classics
+                            Zenko Books is your trusted destination for books and magazines in Japan. From timeless
+                            classics
                             to the latest releases, we bring stories, culture, and inspiration to every reader’s hands.
                         </p>
                         <div class="text-start pt-2">
-                        <a href="#" id="open_preferences_center" class="text-decoration-none">Update cookies
-                            preferences</a>
-                    </div>
+                            <a href="#" id="open_preferences_center" class="text-decoration-none">Update cookies
+                                preferences</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">

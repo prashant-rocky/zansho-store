@@ -46,7 +46,7 @@ function typeTick() {
         el.textContent = current.slice(0, charIndex + 1);
         charIndex++;
         if (charIndex === current.length) {
-      
+
             isDeleting = true;
             setTimeout(typeTick, holdTime);
         } else {
@@ -330,7 +330,7 @@ function renderCart() {
 
     cartitems.forEach((item, index) => {
         total += parseFloat(item.price.replace("¥", "").replace(",", ""));
-        if(cartItemsContainer){
+        if (cartItemsContainer) {
             cartItemsContainer.innerHTML += `
                 <div class="cart-item d-flex justify-content-between align-items-center border-bottom py-2">
                     <div>
@@ -349,15 +349,35 @@ function removeFromCart(index) {
     cartitems.splice(index, 1);
     renderCart();
 }
+function updateCartCount() {
+    const cartCount = document.getElementById("cartCount");
+    cartCount.innerText = cartitems.length;
+}
+
+function addToCart(id) {
+    const product = products.find(p => p.id === id);
+    if (!product) return;
+
+    cartitems.push(product);
+    renderCart();
+    updateCartCount(); // update the badge
+}
+
+function removeFromCart(index) {
+    cartitems.splice(index, 1);
+    renderCart();
+    updateCartCount(); // update the badge
+}
+
 
 // Open checkout form
 const checkout = document.getElementById("Checkout");
-if (checkout){
+if (checkout) {
     checkout.addEventListener("click", () => {
         if (cartitems.length == 0) {
             alert("please add product in cart")
         }
-        else{
+        else {
             const checkoutModal = new bootstrap.Modal(document.getElementById("checkoutModal"));
             checkoutModal.show();
         }
@@ -365,7 +385,7 @@ if (checkout){
 }
 
 // Handle form submission
-document.getElementById("checkoutForm").addEventListener("submit", function(e) {
+document.getElementById("checkoutForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
     const name = document.getElementById("name").value.trim();
@@ -385,6 +405,7 @@ Your order will be delivered to: ${address}
 📧 Email: ${email}
 📞 Phone: ${phone}
 💰 Payment: Cash on Delivery.`);
+ cartCount.innerText = '0';
     }
 
     // Clear cart after order
@@ -400,16 +421,16 @@ Your order will be delivered to: ${address}
     const modal = bootstrap.Modal.getInstance(modalEl);
     modal.hide();
 });
- const contactForm = document.getElementById('contactForm');
-  const thankYouCard = document.getElementById('thankYouCard');
+const contactForm = document.getElementById('contactForm');
+const thankYouCard = document.getElementById('thankYouCard');
 
-  contactForm.addEventListener('submit', function(e){
+contactForm.addEventListener('submit', function (e) {
     e.preventDefault(); // prevent actual form submission
     thankYouCard.classList.remove('d-none'); // show thank you card
 
     // Hide after 4 seconds
     setTimeout(() => {
-      thankYouCard.classList.add('d-none');
-      contactForm.reset(); // reset form fields
+        thankYouCard.classList.add('d-none');
+        contactForm.reset(); // reset form fields
     }, 4000);
-  });
+});
